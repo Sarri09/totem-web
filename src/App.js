@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js (fragmento de rutas)
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AdminRoute from './components/AdminRoute';
+import AdminRooms from './pages/AdminRooms';
+import AdminCameras from './pages/AdminCameras';
+import AdminAssign from './pages/AdminAssign';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import CreateRoom from './pages/CreateRoom';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* públicas */}
+        <Route path="/login" element={<Login />} />
+
+        {/* privadas normales (tu PrivateRoute o simple verificación en cada página) */}
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* ADMIN */}
+        <Route path="/admin/rooms" element={<AdminRoute><AdminRooms /></AdminRoute>} />
+        <Route path="/admin/cameras" element={<AdminRoute><AdminCameras /></AdminRoute>} />
+        <Route path="/admin/assign" element={<AdminRoute><AdminAssign /></AdminRoute>} />
+
+        {/* default */}
+        <Route path="*" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
