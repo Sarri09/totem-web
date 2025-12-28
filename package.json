@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@livekit/components-react": "^2.9.15",
+    "@livekit/components-styles": "^1.1.6",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
@@ -10,6 +12,7 @@
     "axios": "^1.12.2",
     "cors": "^2.8.5",
     "jwt-decode": "^4.0.0",
+    "livekit-client": "^2.15.13",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.3",
